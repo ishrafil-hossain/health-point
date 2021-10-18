@@ -1,0 +1,83 @@
+[
+    {
+        "id": 1,
+        "name": "Dr-Abu-Mohammod-Nurul-Ahad",
+        "img": "https://i.ibb.co/rpWGWgL/Dr-Abu-Mohammod-Nurul-Ahad.jpg",
+        "description": "Dr-Abu-Mohammod-Nurul-Ahad is a diabetes Specialist doctor in Comilla. His qualification is MBBS, MPhil (BSMMU), IAEA Fellowship Training (South Korea). He is a Professor & Head in the Department of Oncology at Shahabuddin Medical College & Hospital",
+        "degree": "MBBS,",
+        "chamberTime": "Saturday to Thursday(4:00 pm - 9:00 pm)",
+        "Speciality": "Diabetes"
+    },
+    {
+        "id": 2,
+        "name": "Dr-Sharmin-Rahaman",
+        "img": "https://i.ibb.co/3W4Qdjd/Dr-Sharmin-Rahaman.jpg",
+        "description": "Dr-Sharmin-Rahaman is a Medicine Specialist doctor in Comilla. His qualification is MBBS, MPhil (BSMMU), IAEA Fellowship Training (South Korea). He is a Professor & Head in the Department of Oncology at Shahabuddin Medical College & Hospital",
+        "degree": "MBBS,",
+        "chamberTime": "Saturday to Thursday(4:00 pm - 9:00 pm)",
+        "Speciality": "Medicine"
+    },
+    {
+        "id": 3,
+        "name": "Dr-Ajit-Kumar-Paul",
+        "img": "https://i.ibb.co/BNFyksW/Dr-Ajit-Kumar-Paul.jpg",
+        "description": "Dr-Ajit-Kumar-Paul is a Dental Specialist doctor in Comilla. His qualification is MBBS, MPhil (BSMMU), IAEA Fellowship Training (South Korea). He is a Professor & Head in the Department of Oncology at Shahabuddin Medical College & Hospital",
+        "degree": "MBBS,",
+        "chamberTime": "Saturday to Thursday(4:00 pm - 9:00 pm)",
+        "Speciality": "Dental"
+    },
+    {
+        "id": 4,
+        "name": "Dr-Mahmudul-Hasan-Khan",
+        "img": "https://i.ibb.co/qRkvqLr/Dr-Mahmudul-Hasan-Khan.jpg",
+        "description": "Dr-Mahmudul-Hasan-Khan is a aparoscopic Specialist doctor in Comilla. His qualification is MBBS, MPhil (BSMMU), IAEA Fellowship Training (South Korea). He is a Professor & Head in the Department of Oncology at Shahabuddin Medical College & Hospital",
+        "degree": "MBBS,",
+        "chamberTime": "Saturday to Thursday(4:00 pm - 9:00 pm)",
+        "Speciality": "Aparoscopic"
+    },
+    {
+        "id": 5,
+        "name": "Dr-Md-Abdul-Hoque",
+        "img": "https://i.ibb.co/c8rhjPJ/Dr-Md-Abdul-Hoque.jpg",
+        "description": "Dr-Md-Abdul-Hoque is a Pediatric Specialist doctor in Comilla. His qualification is MBBS, MPhil (BSMMU), IAEA Fellowship Training (South Korea). He is a Professor & Head in the Department of Oncology at Shahabuddin Medical College & Hospital",
+        "degree": "MBBS,",
+        "chamberTime": "Saturday to Thursday(4:00 pm - 9:00 pm)",
+        "Speciality": "Pediatric"
+    },
+    {
+        "id": 6,
+        "name": "Dr-Parvin-Mujib",
+        "img": "https://i.ibb.co/5xfYF9V/Dr-Parvin-Mujib.jpg",
+        "description": "Dr-Parvin-Mujib is a Neurology Specialist doctor in Comilla. His qualification is MBBS, MPhil (BSMMU), IAEA Fellowship Training (South Korea). He is a Professor & Head in the Department of Oncology at Shahabuddin Medical College & Hospital",
+        "degree": "MBBS,",
+        "chamberTime": "Saturday to Thursday(4:00 pm - 9:00 pm)",
+        "Speciality": "Neurology"
+    },
+    {
+        "id": 7,
+        "name": "Dr-Md-Aminul-Islam",
+        "img": "https://i.ibb.co/HK7VPVR/Dr-Md-Aminul-Islam.jpg",
+        "description": "Dr-Md-Aminul-Islam is a Cardiology Specialist doctor in Comilla. His qualification is MBBS, MPhil (BSMMU), IAEA Fellowship Training (South Korea). He is a Professor & Head in the Department of Oncology at Shahabuddin Medical College & Hospital",
+        "degree": "MBBS,",
+        "chamberTime": "Saturday to Thursday(4:00 pm - 9:00 pm)",
+        "Speciality": "Cardiology"
+    },
+    {
+        "id": 8,
+        "name": "Dr-Mohammod-Zahir-Uddin",
+        "img": "https://i.ibb.co/ypYdbK6/Dr-Mohammod-Zahir-Uddin.jpg",
+        "description": "Dr-Mohammod-Zahir-Uddin is a Pediatric Specialist doctor in Comilla. His qualification is MBBS, MPhil (BSMMU), IAEA Fellowship Training (South Korea). He is a Professor & Head in the Department of Oncology at Shahabuddin Medical College & Hospital",
+        "degree": "MBBS,",
+        "chamberTime": "Saturday to Thursday(4:00 pm - 9:00 pm)",
+        "Speciality": "Pediatric"
+    },
+    {
+        "id": 9,
+        "name": "Dr-Rehana-Akter",
+        "img": "https://i.ibb.co/KDwHZWR/Dr-Rehana-Akter.jpg",
+        "description": "Dr-Rehana-Akter is a Cardiology Specialist doctor in Comilla. His qualification is MBBS, MPhil (BSMMU), IAEA Fellowship Training (South Korea). He is a Professor & Head in the Department of Oncology at Shahabuddin Medical College & Hospital",
+        "degree": "MBBS,",
+        "chamberTime": "Saturday to Thursday(4:00 pm - 9:00 pm)",
+        "Speciality": "Cardiology"
+    }
+]
