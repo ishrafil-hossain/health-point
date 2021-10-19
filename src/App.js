@@ -6,10 +6,13 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import NotFound from './components/NotFound/NotFound';
 import Login from './components/Login/Login';
+import About from './components/About/About';
 import Appointment from './components/Appointment/Appointment';
 import Department from './components/Department/Department';
 import AuthProvider from './contexts/AuthProvider';
 import PrivateRoute from './components/Login/PrivateRoute';
+import Register from './components/Register/Register';
+import Services from './components/Home/Services';
 
 
 function App() {
@@ -19,6 +22,7 @@ function App() {
         <BrowserRouter>
           <Header></Header>
           <Switch>
+            {/* home  */}
             <Route exact path='/'>
               <Home></Home>
             </Route>
@@ -26,13 +30,34 @@ function App() {
               <Home></Home>
             </Route>
 
+            {/* services  */}
+            <Route path='/services'>
+              <Services></Services>
+            </Route>
+
+            {/* appointment  */}
+            <PrivateRoute path='/appointment'>
+              <Appointment></Appointment>
+            </PrivateRoute>
+
+
+
+            {/* about  */}
+            <Route path='/about'>
+              <About></About>
+            </Route>
+
+            {/* login  */}
             <Route path='/login'>
               <Login></Login>
             </Route>
 
-            <PrivateRoute path='/appointment'>
-              <Appointment></Appointment>
-            </PrivateRoute>
+
+
+            <Route path='/register'>
+              <Register></Register>
+            </Route>
+
 
             <Route path='/department/:departmentId'>
               <Department></Department>

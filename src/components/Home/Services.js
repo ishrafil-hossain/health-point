@@ -9,7 +9,7 @@ const Services = () => {
         fetch('./doctors.json')
             .then(res => res.json())
             .then(data => setDepartment(data));
-    })
+    }, [])
     return (
         <div>
             <h1 className='mt-5'>Our Services</h1>

@@ -4,6 +4,7 @@ import { Form, Button } from 'react-bootstrap';
 const Appointment = () => {
     return (
         <div>
+            <h2>Make an Appointment</h2>
             <Form className=' m-5 d-flex justify-content-center'>
                 <div>
                     <Form.Group className="mb-3" controlId="formBasicEmail">

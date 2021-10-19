@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useLocation, useHistory } from 'react-router';
+import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 // import setUser from '../../hooks/useFirebase';
 // import setIsLoading from '../../hooks/useFirebase';
 
@@ -9,6 +11,7 @@ const Login = () => {
     const { signInUsingGoogle } = useAuth();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
 
     const location = useLocation();
     const history = useHistory();
@@ -29,9 +32,21 @@ const Login = () => {
         setPassword(e.target.value);
     }
 
-    const handleEmailRegistration = e => {
-        console.log(email, password);
+    const handleEmailLogin = e => {
         e.preventDefault();
+        console.log(email, password);
+        // login 
+        const auth = getAuth();
+        signInWithEmailAndPassword(auth, email, password)
+            .then((result) => {
+                const user = result.user;
+                console.log(user);
+                setError('');
+            })
+            .catch((error) => {
+                setError(error.message)
+            });
+
     }
     return (
         <div>
@@ -47,13 +62,14 @@ const Login = () => {
                         <Form.Label>Password</Form.Label>
                         <Form.Control onBlur={handlePasswordChange} type="password" placeholder="Password" />
                     </Form.Group>
-                    <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                        <Form.Check type="checkbox" label="Check me out" />
-                    </Form.Group>
-                    <Button onClick={handleEmailRegistration} variant="primary" type="submit">
+
+                    <Button onClick={handleEmailLogin} variant="primary" type="submit">
                         Sign In
                     </Button>
                     <br /> <br />
+                    <p>---------or----------</p>
+                    <p>New user? <Link to='/register'>Create an account</Link></p>
+
                     <p>---------or----------</p>
                     <Button onClick={hangleGoogleLogin} variant="primary" type="submit">
                         Google Sing In
