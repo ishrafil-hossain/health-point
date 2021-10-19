@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import { Button, Form } from 'react-bootstrap';
+import { Button, Col, Form, Row } from 'react-bootstrap';
 import { useLocation, useHistory } from 'react-router';
 import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-// import setUser from '../../hooks/useFirebase';
-// import setIsLoading from '../../hooks/useFirebase';
+
 
 const Login = () => {
     const { signInUsingGoogle } = useAuth();
@@ -17,13 +16,12 @@ const Login = () => {
     const history = useHistory();
     const redirect_uri = location.state?.from || '/home'
 
+    // Google sign-in 
     const hangleGoogleLogin = () => {
         signInUsingGoogle()
             .then(result => {
                 history.push(redirect_uri);
-                // setUser(result.user);
             })
-        // .finally(() => setIsLoading(false))
     }
     const handleEmailChange = e => {
         setEmail(e.target.value);
@@ -32,15 +30,18 @@ const Login = () => {
         setPassword(e.target.value);
     }
 
+    //Email login 
     const handleEmailLogin = e => {
         e.preventDefault();
-        console.log(email, password);
-        // login 
+        if (email === '' || password === '') {
+            setError('Invalid email or password')
+            return;
+        }
         const auth = getAuth();
         signInWithEmailAndPassword(auth, email, password)
             .then((result) => {
-                const user = result.user;
-                console.log(user);
+                history.push(redirect_uri);
+                // const user = result.user;
                 setError('');
             })
             .catch((error) => {
@@ -50,26 +51,28 @@ const Login = () => {
     }
     return (
         <div>
-            <div className=' m-5 d-flex justify-content-center'>
+            <div className=' m-5 w-50'>
+                <h3>Please Login</h3>
                 <div>
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label>Email address</Form.Label>
-                        <Form.Control onBlur={handleEmailChange} type="email" placeholder="Enter email" />
-
+                    <h2 className='text-danger'>{error}</h2>
+                    <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
+                        <Form.Label column sm="2">Email address</Form.Label>
+                        <Col sm="10">
+                            <Form.Control onBlur={handleEmailChange} type="email" placeholder="Enter email" required />
+                        </Col>
                     </Form.Group>
-
-                    <Form.Group className="mb-3" controlId="formBasicPassword">
-                        <Form.Label>Password</Form.Label>
-                        <Form.Control onBlur={handlePasswordChange} type="password" placeholder="Password" />
+                    <Form.Group as={Row} className="mb-3" controlId="formPlaintextPassword">
+                        <Form.Label column sm="2">Password</Form.Label>
+                        <Col sm="10">
+                            <Form.Control onBlur={handlePasswordChange} type="password" placeholder="Password" required />
+                        </Col>
                     </Form.Group>
 
                     <Button onClick={handleEmailLogin} variant="primary" type="submit">
                         Sign In
-                    </Button>
-                    <br /> <br />
-                    <p>---------or----------</p>
-                    <p>New user? <Link to='/register'>Create an account</Link></p>
-
+                    </Button> <br /> <br />
+                    <p>New user? <Link to='/register'>Create an account</Link>
+                    </p>
                     <p>---------or----------</p>
                     <Button onClick={hangleGoogleLogin} variant="primary" type="submit">
                         Google Sing In

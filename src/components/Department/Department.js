@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router';
 import { useEffect, useState } from 'react';
 import { Button, Card, Col, Container, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const Department = () => {
     const { departmentId } = useParams();
@@ -31,7 +32,10 @@ const Department = () => {
                                 <Card.Text>
                                     {findDepartment?.description}
                                 </Card.Text>
-                                <Button variant="primary">Primary</Button>
+                                <Button variant="primary" >
+                                    <Link style={{ textDecoration: 'none' }} className='text-light' to='/appointment'> Appointment</Link>
+
+                                </Button>
                             </Card.Body>
                         </Card>
                     </Col>

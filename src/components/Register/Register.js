@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import { Button, Form } from 'react-bootstrap';
+import { Button, Col, Form, Row } from 'react-bootstrap';
 import { getAuth, createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { Link } from 'react-router-dom';
 
@@ -9,10 +9,6 @@ const Register = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
-
-
-
-
 
     const handleNameChange = e => {
         setName(e.target.value);
@@ -36,18 +32,25 @@ const Register = () => {
         e.preventDefault();
         // registration 
         const auth = getAuth();
-        if (password.length < 6) {
+        if (name === '') {
+            setError('please enter your name')
+            return;
+        }
+        else if (email === '') {
+            setError('please enter your email')
+            return;
+        }
+        else if (password.length < 6) {
             setError('Password must be 6 characters long')
             return;
         }
-        if (!/(?=.*[A-Z])/.test(password)) {
+        else if (!/(?=.*[A-Z])/.test(password)) {
             setError('password must contain at least 1 uppercase')
             return;
         }
         createUserWithEmailAndPassword(auth, email, password)
             .then((result) => {
-                const user = result.user;
-                console.log(user);
+                // const user = result.user;
                 setUserName();
                 setError('')
             })
@@ -59,27 +62,32 @@ const Register = () => {
     }
     return (
         <div>
-            <h3>Please Registration </h3>
-            <div className=' m-5 d-flex justify-content-center'>
 
+            <div className=' m-5 w-50'>
+                <h3>Please Registration </h3>
                 <div>
-                    <Form.Group className="mb-3" controlId="formBasicName">
-                        <Form.Label>Name</Form.Label>
-                        <Form.Control onBlur={handleNameChange} type="email" placeholder="Enter your name" />
+                    <Form.Group as={Row} className="mb-3" controlId="formPlaintext">
+                        <Form.Label column sm="2">Name</Form.Label>
+                        <Col sm="10">
+                            <Form.Control onBlur={handleNameChange} type="email" placeholder="Enter your name" />
+                        </Col>
 
                     </Form.Group>
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label>Email address</Form.Label>
-                        <Form.Control onBlur={handleEmailChange} type="email" placeholder="Enter email" />
-
+                    <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
+                        <Form.Label column sm="2">Email address</Form.Label>
+                        <Col sm="10">
+                            <Form.Control onBlur={handleEmailChange} type="email" placeholder="Enter email" />
+                        </Col>
                     </Form.Group>
 
-                    <Form.Group className="mb-3" controlId="formBasicPassword">
-                        <Form.Label>Password</Form.Label>
-                        <Form.Control onBlur={handlePasswordChange} type="password" placeholder="Password" />
+                    <Form.Group as={Row} className="mb-3" controlId="formPlaintextPassword">
+                        <Form.Label column sm="2">Password</Form.Label>
+                        <Col sm="10">
+                            <Form.Control onBlur={handlePasswordChange} type="password" placeholder="Password" />
+                        </Col>
                     </Form.Group>
 
-                    <h3>{error}</h3>
+                    <h3 className='text-danger'>{error}</h3>
                     <Button onClick={handleEmailRegistration} variant="primary" type="submit">
                         Register
                     </Button>
